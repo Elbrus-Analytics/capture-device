@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Set env
+source .env
+
+# Logging
+echo "[$(date +"%Y-%m-%dT%H:%M:%S%z")] STOPPED CAPTURE SERVICE" >> $LOGFILE
+
+# Remove oldest file form DIR "/var/elbrus/capture/pcap/"
+if [ $( ls $PCAP | wc -l ) -gt $MAXFILES ]; then
+	FILE=$PCAP"$(ls -t $WORKINGDIR | tail -1)"
+	rm $FILE
+	echo "[$(date +"%Y-%m-%dT%H:%M:%S%z")] DELETED $FILE" >> $LOGFILE
+fi
