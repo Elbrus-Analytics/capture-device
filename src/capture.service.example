@@ -2,12 +2,19 @@
 Description=elb-Service to capture traffic
 
 [Service]
+#job is starting immediatly after the start action has been called
 Type=simple
+#the user to execute the script
 User=aragog
+#the working directory
 WorkingDirectory=/var/elbrus/capture
+#which script should be executed
 ExecStart=/bin/bash elb-capture.sh
+#when the script should restart
 Restart=on-failure
+#set the restart timeout
 RestartSec=5
+#which script should be executed when the service stops
 ExecStopPost=/bin/bash elb-capture-log.sh
 
 [Install]
