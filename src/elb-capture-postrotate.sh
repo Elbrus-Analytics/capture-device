@@ -3,10 +3,10 @@
 # Set env
 source .env
 
-# Remove oldest file form DIR "/var/elbrus/capture/pcap/"
+# Remove oldest file
 while true; do
-  if [ $( ls $PCAP | wc -l ) -gt $MAXFILES ]; then
-  	FILE=$PCAP"$(ls -t $PCAP | tail -1)"
+  if [ $( ls -t $PCAP | grep -E 'trace.*\.pcap' | wc -l ) -gt $MAXFILES ]; then
+  	FILE=$PCAP"$(ls -t $PCAP | grep -E 'trace.*\.pcap' | tail -1)"
   	rm $FILE
   	echo "[$(date +"%Y-%m-%dT%H:%M:%S%z")] DELETED $FILE" >> $LOGFILE
   else
