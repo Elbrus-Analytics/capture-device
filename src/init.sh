@@ -1,7 +1,6 @@
 #!/bin/bash
-echo "Setup for capture:"
 while true; do
-read -p "Do you want to proceed? (y/n) " yn
+read -p "Do you want to proceed with setup of the 'capture'? (y/n) " yn
 case $yn in
     [yY] | "yes" | "Yes" ) break;;
     [nN] | "no" | "No" ) echo exiting...;
