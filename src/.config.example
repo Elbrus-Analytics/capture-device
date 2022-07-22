@@ -1,0 +1,10 @@
+#database settings
+DB_HOST=10.0.76.220
+DB_PORT=5432
+DB_NAME=elbrus
+DB_USER=elbrus
+DB_PASSWORD=elbrus123!
+
+#paths
+PCAPFOLDER=/var/elbrus/shared/traces
+IMPORTERPATH=/var/elbrus/pcap-importer/pcap-importer
