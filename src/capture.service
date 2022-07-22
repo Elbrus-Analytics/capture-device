@@ -1,0 +1,14 @@
+[Unit]
+Description=elb-Service to capture traffic
+
+[Service]
+Type=simple
+User=aragog
+WorkingDirectory=/var/elbrus/capture
+ExecStart=/bin/bash elb-capture.sh
+Restart=on-failure
+RestartSec=5
+ExecStopPost=/bin/bash elb-capture-log.sh
+
+[Install]
+WantedBy=multi-user.target 
