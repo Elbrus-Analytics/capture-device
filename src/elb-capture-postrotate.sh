@@ -17,5 +17,5 @@ done
 
 sleep 1
 echo "[$(date +"%Y-%m-%dT%H:%M:%S%z")] starting import ..." >> "$LOGFILEDIR/capture-$(date +"%Y-%U").log"
-$IMPORTERPATH
+$IMPORTERPATH >> "$LOGFILEDIR/capture-$(date +"%Y-%U").log"
 echo "[$(date +"%Y-%m-%dT%H:%M:%S%z")] finished import" >> "$LOGFILEDIR/capture-$(date +"%Y-%U").log"
