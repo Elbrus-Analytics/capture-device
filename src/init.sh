@@ -30,6 +30,9 @@ read -p "Is the shared config stored at '$SHAREDCONFIG' ? (y/n/exit) " confirm
 case $confirm in
     [yY] | "yes" | "Yes" ) break;;
     [nN] | "no" | "No" ) clear;
+            SHAREDCONFIG=/var/elbrus/shared/.config;
+            POSTROTATEPATH=/var/elbrus/capture/elb-capture-postrotate.sh;
+            LOGPATH=/var/elbrus/shared/log;
             read -p "Where should the log be stored (dir) [/var/elbrus/capture/]: " LOGPATH;
             read -p "Where is the elb-capture-postrotate.sh stored [$POSTROTATEPATH]: " POSTROTATEPATH;
             read -p "Where is the shared config stored [$SHAREDCONFIG]: " SHAREDCONFIG;
