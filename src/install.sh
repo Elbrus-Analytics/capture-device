@@ -48,7 +48,7 @@ done
 
 mkdir -p $LOGPATH
 
-tee .env <<EOL
+tee capture/.env <<EOL
 #global
 SHAREDCONFIG=$SHAREDCONFIG
 
