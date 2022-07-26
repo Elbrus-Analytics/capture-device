@@ -8,3 +8,4 @@ DB_PASSWORD=elbrus123!
 #paths
 PCAPFOLDER=/var/elbrus/shared/traces
 IMPORTERPATH=/var/elbrus/pcap-importer/pcap-importer
+REPORTERPATH=/var/elbrus/report-generator/src/main.py
