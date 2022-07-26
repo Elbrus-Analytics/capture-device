@@ -61,6 +61,3 @@ TIMEPERCAPTURE=900
 MAXFILES=10
 INTERFACE=eth0 
 EOL
-
-echo "Cleaning up..."
-rm -rf $(readlink -f "${BASH_SOURCE:-$0}")
