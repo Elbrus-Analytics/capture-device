@@ -23,9 +23,3 @@ echo "[$(date +"%Y-%m-%dT%H:%M:%S%z")] starting import ..." >> "$LOGFILEDIR/capt
 $IMPORTERPATH >> "$LOGFILEDIR/capture-$(date +"%Y-%U").log"
 echo "[$(date +"%Y-%m-%dT%H:%M:%S%z")] finished import" >> "$LOGFILEDIR/capture-$(date +"%Y-%U").log"
 fi
-
-if [ $REPORTERPATH ]; then
-cd "$(dirname "$REPORTERPATH")"
-echo "[$(date +"%Y-%m-%dT%H:%M:%S%z")] creating report ..." >> "$LOGFILEDIR/capture-$(date +"%Y-%U").log"
-python3 $REPORTERPATH
-fi
