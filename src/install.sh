@@ -1,4 +1,5 @@
 #!/bin/bash
+cd "$(dirname "$(readlink -f "$0")")"
 while true; do
 read -p "Do you want to proceed with setup of the 'capture-device'? (y/n) " yn
 case $yn in
@@ -48,7 +49,7 @@ done
 
 mkdir -p $LOGPATH
 
-tee capture/.env <<EOL
+tee .env <<EOL
 #global
 SHAREDCONFIG=$SHAREDCONFIG
 
